@@ -1,0 +1,26 @@
+---
+title: "Developing Data Products Week 3 Assignment"
+author: "N S Karthik"
+date: "05/11/2020"
+output: html_document
+---
+
+## Based on characteristics of the car variation of Miles per Gallon is done. 
+```{r}
+library(plotly)
+data(mtcars)
+head(mtcars)
+```
+```{r}
+plot_ly(mtcars) %>%
+    add_trace(x = ~mpg, y = ~cyl, type="scatter", mode = "markers",name = "cylinder", legendgroup = "cylinder", 
+              marker = list(color = "#green")) %>%
+    add_trace(x = ~mpg, y = ~gear, type="scatter", mode = "markers",
+              name = "gear", legendgroup = "gear", 
+              marker = list(color = "black")) %>%
+    add_trace(x = ~mpg, y = ~carb, type="scatter", mode = "markers",
+              name = "carb", legendgroup = "carb", 
+              marker = list(color = "yellow")) 
+```
+
+
